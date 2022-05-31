@@ -72,6 +72,71 @@ pagination or other performance optimization techniques.
 
 https://reactjs.org/blog/2022/03/29/react-v18.html?#usedeferredvalue
 https://github.com/reactwg/react-18/discussions/46#discussioncomment-846786
+
+
+useId() Hook
+
+const id = useId();
+
+It is a hook for generating unique IDs for both the client and server.
+useId generates a string that includes ": colon token".
+useId is the improved version of useOpaqueIdentifier hook. There was many
+bugs and limitations.
+
+Note: It is not used for generating id for "keys in a list". we should use
+data for keys in the array of list.
+
+Reference:
+https://reactjs.org/docs/hooks-reference.html#useid
+https://github.com/facebook/react/issues/20127
+
+
+
+Strict Mode:
+<React.StrictMode>{child component} </React.StrictMode>
+
+It is a helper component that allow developers to code efficiently
+and show error or warning in the console if react guidline and recommendation
+not followed in the app.
+It does not render anything in the UI.
+It is a React developer tool used for highlighting possible problems 
+in the application.
+We can apply strict mode to any section of the app but recommendation to
+apply in the root.
+Create react app by default add this component in the root.
+
+<React.StrictMode>
+    <App />
+</React.StrictMode>
+
+Note: It checks in the development mode only. It does not impact the
+production build.
+
+Strict Mode called some method twice to detect any problem
+in the app and show warning and error message in the console.
+It is run only in development mode.
+constructor method
+render
+setState
+getDerivedStateFromProps
+useState
+useMemo
+
+Advantage:
+
+Identifying unsafe lifecycles
+Warning about legacy string ref API usage
+Warning about deprecated findDOMNode usage
+Detecting unexpected side effects
+Detecting legacy context API
+Ensuring reusable state
+
+Example
+
+Reference:
+https://reactjs.org/docs/strict-mode.html
+https://kentcdodds.com/blog/react-strict-mode
+
 */
 
 export {};
